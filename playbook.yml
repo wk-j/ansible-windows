@@ -1,11 +1,11 @@
 - hosts: windows
   gather_facts: no
   tasks:
-    - name: Install procmon
-      win_chocolatey: name=procmon  status=present
+    - name: "Install git"
+      win_chocolatey: name=git state=present
 
 - hosts: windows
   gather_facts: no
   tasks:
-    - name: Install procexp
-      win_chocolatey: name=procexp  status=present
+    - name: "Install cmder"
+      win_chocolatey: name=cmder state=present
