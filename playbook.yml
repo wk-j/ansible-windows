@@ -1,5 +1,11 @@
 - hosts: windows
   gather_facts: no
   tasks:
-    - name: Install Chocolatey on Windows10
+    - name: Install procmon
+      win_chocolatey: name=procmon  status=present
+
+- hosts: windows
+  gather_facts: no
+  tasks:
+    - name: Install procexp
       win_chocolatey: name=procexp  status=present

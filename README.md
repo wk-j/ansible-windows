@@ -10,6 +10,9 @@ vagrant winrm --command "winrm enumerate winrm/config/Listener"
 
 ansible-playbook playbook.yml
 ansible windows -m win_ping
+ansible windows -m ping
+
+ansible windows -m shell -a 'echo Hello' -u vagrant -K
 ```
 
 ## Resource
