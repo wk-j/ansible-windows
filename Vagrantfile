@@ -6,6 +6,8 @@ Vagrant.configure("2") do |config|
     config.winrm.username = "vagrant"
     config.winrm.password = "vagrant"
     config.vm.provision :shell, path: "shell/main.cmd"
+    config.vm.synced_folder "resource", "/wk"
+    config.vm.synced_folder ".", "/vagrant", disabled: true
     config.vm.provider "virtualbox" do |v|
         v.memory = 8192
         v.cpus = 2
