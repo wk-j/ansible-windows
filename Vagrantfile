@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder "resource", "/wk"
     config.vm.synced_folder ".", "/vagrant", disabled: true
     config.vm.provider "virtualbox" do |v|
-        v.memory = 8192
+        v.memory = 4000
         v.cpus = 2
         v.name = "Windows 10"
     end
