@@ -7,11 +7,6 @@
     - name: Install python
       win_chocolatey: name=python3 state=present
 
-    # - name: Install an MSI file
-    #   win_msi:
-    #     path: /wk/ScanService.19.0.24.msi
-    #     wait: yes
-
 - hosts: windows
   tasks:
     - name: Uninstall capture service
@@ -25,3 +20,13 @@
         path: C:\wk\ScanService.19.0.24.msi
         state: present
         arguments: /quiet /norestart
+
+    - name: Copy appsettings.json
+      win_copy:
+        src: resource/appsettings.json
+        dest: C:\Program Files (x86)\BCircle\ScanService\appsettings.json
+
+    - name: Restart a service
+      win_service:
+        name: "B Circle ScanService.19.0.24"
+        state: restarted
