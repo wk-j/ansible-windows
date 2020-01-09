@@ -14,6 +14,13 @@ ansible windows -m win_ping
 ansible windows -m shell -a 'echo Hello' -u vagrant -K
 ```
 
+## Tests
+
+```bash
+msiexec /passive /i "C:\\wk\ScanService.19.0.24.msi"
+msiexec /passive /uninstall "C:\\wk\ScanService.19.0.24.msi"
+```
+
 ## Resource
 
 - https://www.linuxtechi.com/manage-windows-host-using-ansible
